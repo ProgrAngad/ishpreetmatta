@@ -1,0 +1,467 @@
+/* ---------------------------------------------------------------------------
+   Ishpreet Kaur Matta — portfolio
+   One accent colour, one type scale, no external requests.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --bg:        #FDFBF9;
+  --surface:   #FFFFFF;
+  --ink:       #1A1614;
+  --muted:     #635A56;
+  --accent:    #6B2C3E;
+  --accent-in: #FFFFFF;
+  --soft:      #F4E9EC;
+  --line:      #E4DBD7;
+  --line-soft: #EFE8E5;
+
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+
+  --wrap: 1080px;
+  --r: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #14110F;
+    --surface:   #1D1917;
+    --ink:       #F3EEEB;
+    --muted:     #B0A49E;
+    --accent:    #E9A8B9;
+    --accent-in: #24121A;
+    --soft:      #2C1F24;
+    --line:      #362E2B;
+    --line-soft: #2A2320;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 2.5px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--accent); color: var(--accent-in);
+  padding: .7rem 1.1rem; z-index: 20; border-radius: 0 0 var(--r) 0;
+}
+.skip:focus { left: 0; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.18; margin: 0; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------- masthead */
+
+.masthead {
+  padding: clamp(2.6rem, 7vw, 4.6rem) 0 clamp(2rem, 4vw, 2.8rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: .74rem; letter-spacing: .13em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 .8rem;
+}
+
+.masthead h1 {
+  font-size: clamp(2.1rem, 6vw, 3.25rem);
+  letter-spacing: -.015em;
+  margin-bottom: 1.1rem;
+}
+
+.lede { max-width: 66ch; font-size: clamp(1rem, 2.2vw, 1.12rem); margin-bottom: .7rem; }
+.lede-sub { max-width: 66ch; color: var(--muted); font-size: .95rem; }
+
+/* ---------------------------------------------------------------- sections */
+
+.section { padding: clamp(3rem, 8vw, 5.2rem) 0; }
+.section--alt { background: var(--surface); border-block: 1px solid var(--line); }
+.section--contact { padding-block: clamp(2.6rem, 6vw, 4rem); }
+
+.kicker {
+  font-family: var(--sans);
+  font-size: .74rem; letter-spacing: .13em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 .75rem; font-weight: 600;
+}
+
+.section h2 {
+  font-size: clamp(1.7rem, 4.4vw, 2.5rem);
+  letter-spacing: -.012em;
+  margin-bottom: .8rem;
+}
+
+.dek {
+  max-width: 62ch;
+  font-size: clamp(1.02rem, 2.2vw, 1.15rem);
+  color: var(--muted);
+  margin-bottom: clamp(2rem, 4vw, 2.8rem);
+}
+
+/* ------------------------------------------------- challenge / role / approach */
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.4rem);
+  margin-bottom: clamp(3rem, 7vw, 4.5rem);
+}
+
+.cs-block h3 {
+  font-size: .82rem; font-family: var(--sans); font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: .6rem; margin-bottom: .9rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.cs-block p, .cs-block li { font-size: .95rem; }
+
+.cs-block ul { margin: 0; padding-left: 1.1rem; }
+.cs-block li { margin-bottom: .6rem; }
+.cs-block li::marker { color: var(--accent); }
+
+.note {
+  font-size: .87rem !important;
+  color: var(--muted);
+  border-left: 2px solid var(--line);
+  padding-left: .85rem;
+}
+
+/* ------------------------------------------------------------- the work lead */
+
+.work-lead {
+  border-top: 1px solid var(--line);
+  padding-top: clamp(2rem, 4vw, 2.6rem);
+  margin-bottom: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.work-title { font-size: clamp(1.45rem, 3.4vw, 2rem); margin-bottom: .35rem; }
+.work-sub { color: var(--muted); font-size: 1rem; }
+
+/* ---------------------------------------------------------- segmentation matrix */
+
+.matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.tier {
+  background: var(--bg);
+  padding: 1.5rem 1.35rem 1.7rem;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 9;
+  align-content: start;
+}
+
+.section--alt .tier { background: var(--surface); }
+
+.tier--primary { background: var(--soft); }
+
+.tier-head { grid-row: span 1; margin-bottom: .4rem; }
+
+.tier-rank {
+  font-family: var(--sans); font-size: .68rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 .45rem;
+}
+
+.tier-head h4 { font-size: 1.3rem; margin-bottom: .4rem; }
+
+.tier-sub { font-size: .88rem; color: var(--muted); margin: 0; }
+
+.tier dl { margin: 0; display: contents; }
+
+.tier dt {
+  font-family: var(--sans); font-size: .67rem; font-weight: 700;
+  letter-spacing: .11em; text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 1.05rem; margin-bottom: .4rem;
+  border-top: 1px solid var(--line-soft);
+  align-self: end;
+}
+
+.tier dd { margin: 0; font-size: .875rem; line-height: 1.55; }
+
+.tier dd b { font-weight: 600; }
+
+.geo {
+  display: block; margin-top: .3rem;
+  font-size: .82rem; color: var(--muted);
+}
+.geo b { color: var(--ink); font-weight: 600; }
+
+.matrix-note {
+  max-width: 66ch;
+  font-size: .9rem; color: var(--muted);
+  margin: 1.3rem 0 clamp(2.6rem, 6vw, 4rem);
+}
+
+/* -------------------------------------------------------------- market sizing */
+
+.sizing {
+  margin: 0 0 clamp(2.4rem, 5vw, 3.4rem);
+  padding: clamp(1.5rem, 3.5vw, 2.2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--bg);
+}
+.section--alt .sizing { background: var(--surface); }
+
+.sizing figcaption { margin-bottom: 1.8rem; }
+.sizing h4 { font-size: 1.25rem; margin-bottom: .3rem; }
+.sizing figcaption p { font-size: .9rem; color: var(--muted); margin: 0; }
+
+.mkt + .mkt { margin-top: 1.6rem; }
+
+.mkt-head {
+  display: flex; flex-wrap: wrap; gap: .5rem 1rem;
+  align-items: baseline; justify-content: space-between;
+  margin-bottom: .5rem;
+}
+
+.mkt-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+.mkt-total { font-size: .85rem; color: var(--muted); }
+
+.bar {
+  height: 40px;
+  background: var(--line-soft);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--accent);
+  display: flex; align-items: center;
+  padding-left: .8rem;
+  border-radius: 4px 0 0 4px;
+  min-width: 5.5rem;
+}
+
+.bar-val {
+  color: var(--accent-in);
+  font-size: .85rem; font-weight: 700;
+  white-space: nowrap;
+}
+
+.mkt-foot { font-size: .84rem; color: var(--muted); margin: .45rem 0 0; }
+.mkt-foot b { color: var(--ink); font-weight: 600; }
+
+.sizing-method {
+  margin-top: 1.8rem; padding-top: 1.3rem;
+  border-top: 1px solid var(--line);
+  font-size: .87rem; color: var(--muted); max-width: 72ch;
+}
+.sizing-method b { color: var(--ink); }
+
+/* ------------------------------------------------------------ unit economics */
+
+.econ {
+  margin-bottom: clamp(2.4rem, 5vw, 3.4rem);
+  padding: clamp(1.5rem, 3.5vw, 2.2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+
+.econ h4 { font-size: 1.25rem; margin-bottom: 1.2rem; }
+
+.econ-row {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; align-items: stretch; gap: .5rem .9rem;
+}
+
+.econ-item {
+  display: flex; flex-direction: column; gap: .1rem;
+  min-width: 6.5rem;
+}
+
+.econ-n { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; }
+.econ-l { font-size: .74rem; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+
+.econ-item--lead .econ-n,
+.econ-item--out .econ-n { color: var(--accent); }
+.econ-item--out { padding-left: .9rem; border-left: 2px solid var(--accent); }
+
+.econ-op {
+  align-self: center;
+  font-size: 1.1rem; color: var(--muted);
+  padding-bottom: .9rem;
+}
+
+.econ-note {
+  margin: 1.4rem 0 0; padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  font-size: .87rem; color: var(--muted); max-width: 72ch;
+}
+
+/* -------------------------------------------------------------------- outcome */
+
+.cs-block--outcome {
+  border-top: 1px solid var(--line);
+  padding-top: clamp(2rem, 4vw, 2.6rem);
+  max-width: 74ch;
+}
+
+.cs-block--outcome h3 { display: inline-block; }
+
+.outcome-bridge {
+  margin-top: 1.4rem; padding: 1.1rem 1.3rem;
+  background: var(--soft);
+  border-radius: var(--r);
+  font-size: .95rem;
+}
+
+/* -------------------------------------------------------------------- tracker */
+
+/* The screenshot is a dense spreadsheet, so it gets the full column width -
+   squeezed into half of a two-column grid it is not legible. */
+.tr-copy { max-width: 74ch; }
+.tr-copy p, .tr-list li { font-size: .95rem; }
+
+.tr-list { margin: 0 0 1em; padding-left: 1.1rem; }
+.tr-list li { margin-bottom: .5rem; }
+.tr-list li::marker { color: var(--accent); }
+
+.tr-finding {
+  padding: 1.05rem 1.25rem;
+  background: var(--soft);
+  border-radius: var(--r);
+  margin-bottom: 1em;
+}
+
+.mock {
+  font-size: .82rem !important;
+  color: var(--muted);
+  border-left: 2px solid var(--line);
+  padding-left: .85rem;
+}
+
+.btn-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.8rem; }
+
+.btn {
+  display: inline-flex; align-items: baseline; gap: .5rem;
+  padding: .68rem 1.15rem;
+  border: 1px solid var(--accent);
+  border-radius: 7px;
+  color: var(--accent);
+  font-size: .92rem; font-weight: 600;
+  text-decoration: none;
+}
+.btn:hover { background: var(--soft); }
+
+.btn--primary { background: var(--accent); color: var(--accent-in); }
+.btn--primary:hover { background: var(--accent); filter: brightness(1.12); }
+
+.btn-meta { font-weight: 400; font-size: .78rem; opacity: .78; }
+
+.tr-shot { margin: clamp(2rem, 4vw, 2.8rem) 0 0; }
+
+.tr-shot img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: #fff;
+}
+
+.tr-shot figcaption {
+  margin-top: .7rem;
+  font-size: .82rem; color: var(--muted);
+}
+.fc-link { color: var(--accent); }
+
+/* -------------------------------------------------------------------- contact */
+
+.contact {
+  list-style: none; margin: 1.6rem 0 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem 2rem;
+  max-width: 900px;
+}
+
+.contact li { display: flex; flex-direction: column; gap: .2rem; }
+
+.ct-label {
+  font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+
+.contact a { font-size: .98rem; word-break: break-word; }
+
+/* ---------------------------------------------------------------------- foot */
+
+.foot {
+  padding: 2rem 0 2.6rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .84rem;
+}
+
+/* --------------------------------------------------------------- responsive */
+
+@media (max-width: 780px) {
+  body { font-size: 16px; }
+
+  .matrix {
+    grid-template-columns: 1fr;
+    background: none;
+    border: none;
+    border-radius: 0;
+    gap: 1rem;
+  }
+
+  .tier {
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+  }
+
+  .tier--primary { background: var(--soft); }
+
+  .econ-op { display: none; }
+  .econ-row { gap: 1.1rem 1.6rem; }
+  .econ-item--out { width: 100%; }
+}
+
+/* No subgrid (older Safari / Firefox): fall back to normal flow so the cards
+   still read correctly, they simply do not align row-for-row. */
+@supports not (grid-template-rows: subgrid) {
+  .tier { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
