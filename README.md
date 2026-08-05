@@ -7,5 +7,4 @@ external requests.
 - `assets/`: one screenshot
 - `files/`: an Excel allocation tracker, its one-page summary, and a resume
 
-The allocation tracker runs on sample data that was made up to demonstrate the method.
-None of it comes from any employer.
+The allocation tracker runs on sample data. Not from any employer.
