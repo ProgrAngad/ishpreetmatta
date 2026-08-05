@@ -1,0 +1,12 @@
+# Git guessed the PDFs were text and wanted to rewrite LF to CRLF inside them,
+# which shifts every byte offset and corrupts the file on checkout. Pin the
+# binaries so that can never happen.
+*.pdf   binary
+*.xlsx  binary
+*.png   binary
+*.ico   binary
+
+# Text stays LF in the repository regardless of what Windows does locally.
+*.html  text eol=lf
+*.css   text eol=lf
+*.md    text eol=lf
