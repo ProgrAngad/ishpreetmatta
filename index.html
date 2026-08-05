@@ -19,8 +19,8 @@
     <h1>Ishpreet Kaur Matta</h1>
     <p class="lede">
       Four years in Canadian retail. Two of those were in apparel at Banana Republic&nbsp;/ GAP&nbsp;Inc.,
-      where I coordinated over 2,000 inter-store transfers, reconciled shipments against the paperwork,
-      ran markdown cycles and did the cycle counts. I'm working on moving that head-office side now,
+      where I coordinated over 2,000 inter-store transfers, reconciled shipments against delivery
+      documentation, ran markdown cycles and ran cycle counts. I'm moving that work head-office side now,
       into allocation and merchandising.
     </p>
     <p class="lede-sub">
@@ -56,9 +56,9 @@
         <p>
           Swimwear is where the fit problem gets worst. A top cut for a fuller bust gaps at the cup and
           drags on the strap, and a lot of the category solves that by adding padding nobody asked for.
-          Making the product wasn't really the hard part. The question was
+          Making the product wasn't the hard part. The question was
           <strong>who buys it, where they live, and whether there are enough of them</strong> to justify
-          a $2M launch budget.
+          a $2M promotional budget.
         </p>
       </article>
 
@@ -86,7 +86,7 @@
         <ul>
           <li><strong>Geography went by climate, not population.</strong> Swimwear sells where it's warm,
             so the primary tier leans into the warm regions of Canada and the US. The cold-region
-            customer who travels ended up as her own tier rather than an afterthought.</li>
+            customer who travels ended up as its own tier rather than an afterthought.</li>
           <li><strong>Sizing was top down.</strong> I started from the published swimwear and beachwear
             category figures and cut them to the share of women in the applicable range.</li>
           <li><strong>Only the primary tier got sized.</strong> The other two don't get their own
@@ -122,7 +122,7 @@
           <dd>
             Women, 18 to 50. Family life cycle: young single, married, family nests 1 to 3, empty nest 1.
             Lower-middle class and up. I left education and occupation out on purpose, they don't predict
-            this need. <b>About 32% of women fall in the applicable range.</b>
+            this need. <b>About 32% of women wear AA to B cups.</b>
           </dd>
 
           <dt>Lifestyle &amp; values</dt>
@@ -216,8 +216,8 @@
     </div>
 
     <p class="matrix-note">
-      Three tiers, three different calendars: summer, travel, gifting. That's the bit that turned a
-      description of customers into an actual promotional calendar.
+      Three tiers, three different calendars: summer, travel, gifting. That's what turned a description
+      of customers into an actual promotional calendar.
     </p>
 
     <!-- ============ MARKET SIZING ============ -->
@@ -288,7 +288,7 @@
         <li>A named primary target with a sized market behind it, roughly $7B of a $22.1B US category,
           and a stated reason for leaving education and occupation out of the segmentation.</li>
         <li>A geographic launch order weighted to the warm regions, with the cold-region traveller
-          handled as her own tier instead of being ignored.</li>
+          handled as its own tier instead of being ignored.</li>
         <li>A positioning statement built on fit and body diversity rather than volume, and a message
           platform to carry it.</li>
         <li>The $2M promotional budget split across Instagram, Pinterest, TikTok, fashion press and
@@ -329,20 +329,19 @@
             SUMIFS, AVERAGEIFS and COUNTIFS.</li>
           <li><b>Summary grid.</b> Store by week, driven by formulas rather than a pivot table, with red
             / amber / green banding against the weeks-of-supply range.</li>
-          <li><b>Transfer recommendations</b>, which is really the point of the thing. It takes the store
+          <li><b>Transfer recommendations</b>, the centrepiece. It takes the store
             with the most to spare above the ceiling, matches it to the store with the biggest gap below
             the floor, sizes the move so neither one ends up outside the range afterwards, then writes
             out the reason in plain English.</li>
           <li><b>Size curve analysis.</b> Each store's sales mix by size against what it's actually
             holding by size, and the gap between the two.</li>
-          <li><b>Formula reference.</b> Every calculated column, what it means and why an allocator would
-            care.</li>
+          <li><b>Formula reference.</b> Every calculated column written out, so the workbook explains
+            itself.</li>
         </ul>
         <p>
           Every threshold lives in a single named cell: the weeks-of-supply floor and ceiling, the
           rebalance target, the smallest quantity worth shipping, the review week. Change one and the
-          whole workbook re-runs. It's built to survive the import into Google Sheets, so there are no
-          pivot tables, no macros, no XLOOKUP and no merged cells.
+          whole workbook re-runs. Built to import into Google Sheets intact.
         </p>
         <p class="tr-finding">
           On the sample data it calls <b>17 transfers moving 281 units</b>. It also flags a store that
