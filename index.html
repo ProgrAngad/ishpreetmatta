@@ -20,8 +20,9 @@
     <p class="lede">
       Four years in Canadian retail. Two of those were in apparel at Banana Republic&nbsp;/ GAP&nbsp;Inc.,
       where I coordinated over 2,000 inter-store transfers, reconciled shipments against the paperwork,
-      ran markdown cycles and did the cycle counts. I'm working on moving that head-office side now,
-      into allocation and merchandising.
+      ran markdown cycles and did the cycle counts. The floor is where you find out which allocation
+      decisions actually worked. I'm looking to apply that head-office side, in allocation and
+      merchandising.
     </p>
     <p class="lede-sub">
       M.Com and B.Com (Accounting), Panjab University. Postgraduate certificates in Public Relations and
@@ -49,9 +50,9 @@
       <article class="cs-block">
         <h3>Challenge</h3>
         <p>
-          WearPepper is a real brand. Jaclyn Fu and Lia Winograd started it in 2017 around one unserved
-          fit problem: bras actually cut for AA, A and B cups, rather than a C graded down. That worked
-          for them in bras and then in athleisure, and swimwear was the obvious next step.
+          WearPepper, started in 2017 by Jaclyn Fu and Lia Winograd, is built around one unserved fit
+          problem: bras actually cut for AA, A and B cups, rather than a C graded down. That worked for
+          them in bras and then in athleisure, and swimwear was the obvious next step.
         </p>
         <p>
           Swimwear is where the fit problem gets worst. A top cut for a fuller bust gaps at the cup and
@@ -71,8 +72,8 @@
           the price and margin structure.
         </p>
         <p class="note">
-          School project, York University, 2023. WearPepper is a real company; the Hathor Collection is
-          my own proposal for them, not a brief they set. The line was never made.
+          School project, York University, 2023. The Hathor Collection is a line I proposed for
+          WearPepper, not one they briefed.
         </p>
       </article>
 
@@ -313,8 +314,8 @@
     <p class="kicker">Built artifact · Excel / Google Sheets</p>
     <h2 id="tr-title">Allocation &amp; In-Stock Tracker</h2>
     <p class="dek">
-      An allocation workbook rather than a forecast. It doesn't try to guess what will sell. It takes the
-      stock that already exists and works out where it's sitting wrong and what should move.
+      Nine stores are holding the same style. Some are days from running out, others will never sell what
+      they have. This works out which is which, and what should move.
     </p>
 
     <div class="tr-grid">
@@ -327,8 +328,9 @@
         <ul class="tr-list">
           <li><b>Store performance.</b> Sell-through %, weeks of supply and in-stock %, all built out of
             SUMIFS, AVERAGEIFS and COUNTIFS.</li>
-          <li><b>Summary grid.</b> Store by week, driven by formulas rather than a pivot table, with red
-            / amber / green banding against the weeks-of-supply range.</li>
+          <li><b>Summary grid.</b> Store by week. A pivot table would show the same thing, but I built it
+            from formulas so it re-runs on its own, with red / amber / green banding against the
+            weeks-of-supply range.</li>
           <li><b>Transfer recommendations</b>, which is really the point of the thing. It takes the store
             with the most to spare above the ceiling, matches it to the store with the biggest gap below
             the floor, sizes the move so neither one ends up outside the range afterwards, then writes
@@ -339,10 +341,9 @@
             care.</li>
         </ul>
         <p>
-          Every threshold lives in a single named cell: the weeks-of-supply floor and ceiling, the
-          rebalance target, the smallest quantity worth shipping, the review week. Change one and the
-          whole workbook re-runs. It's built to survive the import into Google Sheets, so there are no
-          pivot tables, no macros, no XLOOKUP and no merged cells.
+          It's a dynamic workbook. Every threshold sits in a named cell: the weeks-of-supply floor and
+          ceiling, the rebalance target, the smallest quantity worth shipping, the review week. Change
+          any one of them and everything downstream re-runs off the new value.
         </p>
         <p class="tr-finding">
           On the sample data it calls <b>17 transfers moving 281 units</b>. It also flags a store that
@@ -350,7 +351,7 @@
           in sizes it doesn't sell</b>. You'd never catch that from a total-units view.
         </p>
         <p class="mock">
-          Sample data throughout. Not from any employer.
+          This exercise is based on synthetic data.
         </p>
       </div>
 
